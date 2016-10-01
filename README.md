@@ -18,18 +18,18 @@ Raspberry Pi3用 C言語サンプルソース
 * 温湿度センサー
 * 温度センサー
 * 照度センサー
-* 騒音センサー
+* 騒音センサー   
 ##1.4 ADC-DAC Pi
-* ADC(12bit 30ksps)
+* ADC(12bit 30ksps)   
 ##1.5 NEC RF
 * H001-000013-005(920MHz帯)
-* ZB24TM-E2036(2.4GHz帯)
+* ZB24TM-E2036(2.4GHz帯)   
 ##1.6 起動時にアプリに自動実行
 #2 応用編
 ##2.1 NEC RF
 * Gateway(Server)
 * 人感センサー端末
 * 中継機
-* ペアリング
+* ペアリング   
 ##2.2 Wi-Fi/Ethernet
 * ADC端末
