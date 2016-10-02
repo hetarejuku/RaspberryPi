@@ -12,7 +12,12 @@ Raspberry Pi3用 C言語サンプルソース
 
 #1 基礎編
 ##1.1 TCP/IP通信(Wi-Fi/Ethernet)
+* Server制御
+* Client制御
+
 ##1.2 Serial通信(UART/USB FTDI/USB CDC)
+* エコーバック制御
+
 ##1.3 GrovePi+
 * 人感センサー制御
 * 温湿度センサー制御
