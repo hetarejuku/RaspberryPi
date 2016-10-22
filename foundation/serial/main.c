@@ -3,7 +3,7 @@
 // Copyright (c) 2016 ヘタレ塾 (https://github.com/hetarejuku/)
 // Released under the MIT License.
 // https://opensource.org/licenses/mit-license.php
-// 概要　: 受信したデータを受信元へ送信する、エコーバックプログラム
+// 概要　: 受信したデータを送信元へ送信する、エコーバックプログラム
 // 履歴　: v1.0 (2016/10/22) ヘタレ塾 (新規作成)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
