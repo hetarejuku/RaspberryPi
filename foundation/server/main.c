@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     sockfd = socket(AF_INET, SOCK_STREAM, 0);    //IPv4,byte stream,1 protocol
     //オープンエラー？
     if (sockfd < 0) {
-        perror("OPEN ERROR");
+        perror("OPEN ERROR\n");
         exit(EXIT_FAILURE);
     }
 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(PORT_NUM);
     if(bind(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
-        perror("BIND ERROR");
+        perror("BIND ERROR\n");
         exit(EXIT_FAILURE);
     }
 
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
         //接続エラー？
         if (tcpfd < 0 ){
-            perror("ACCEPT ERROR");
+            perror("ACCEPT ERROR\n");
             exit(EXIT_FAILURE);
         }
  
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
             len = recv(tcpfd, buf, sizeof(buf), 0);
             //受信エラー？
             if(len < 0) {
-                perror("RECV ERROR");
+                perror("RECV ERROR\n");
                 exit(EXIT_FAILURE);
             }
             //クライアントが切断した？
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
                     printf("OVERFLOW\n");
                     continue;
                 }
-                perror("SEND ERROR");
+                perror("SEND ERROR\n");
                 exit(EXIT_FAILURE);
             }
             //送信データを16進数で表示
@@ -179,7 +179,7 @@ void serverInit(int sockfd)
     //アドレスの再利用を許可
     //（クライアントより先にサーバーがクローズした後に、即再オープンするとBINDエラーになるのを防止する）
     if(setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on)) < 0) {
-        perror("SET ERROR");
+        perror("SET ERROR\n");
         exit(EXIT_FAILURE);
     }
 }
