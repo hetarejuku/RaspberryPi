@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
             exit(EXIT_FAILURE);
         }
  
-        printf("OPEND\n");
+        printf("OPEND (CLIENT IP = %s)\n", inet_ntoa(cli_addr.sin_addr));
 
         //無限ループ
         while (1) {
@@ -175,7 +175,7 @@ void serverInit(int sockfd)
     ifr.ifr_addr.sa_family = AF_INET;
     strncpy(ifr.ifr_name, DEV_NAME, IFNAMSIZ-1);
     ioctl(sockfd, SIOCGIFADDR, &ifr);
-    printf("IP= %s, Port= %d\n", inet_ntoa(((struct sockaddr_in*)&ifr.ifr_addr)->sin_addr), PORT_NUM);
+    printf("SERVER IP = %s, PORT = %d\n", inet_ntoa(((struct sockaddr_in*)&ifr.ifr_addr)->sin_addr), PORT_NUM);
 
     //アドレスの再利用を許可
     //（クライアントより先にサーバーがクローズした後に、即再オープンするとBINDエラーになるのを防止する）
